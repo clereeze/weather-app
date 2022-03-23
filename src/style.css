@@ -1,0 +1,98 @@
+body {
+  display: block;
+  margin: 50px;
+  padding: 30px;
+  border: solid 1px grey;
+  border-radius: 20px;
+  font-family: arial, sans-serif;
+  color: #202124;
+  max-width: 2000px;
+  position: fixed;
+  left: 10px;
+}
+#search-bar {
+  margin-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  text-align: center;
+  position: relative;
+}
+
+#city-name {
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+.summary {
+  font-size: 15px;
+  margin-top: 25px;
+}
+
+.cloudy {
+  display: inline-block;
+  margin-top: unset;
+  vertical-align: top;
+  width: 60px;
+}
+
+#temperature {
+  font-size: 48px;
+  font-weight: 400;
+  font-family: Google Sans, arial, sans-serif;
+  color: #202124;
+}
+
+.units {
+  position: relative;
+  top: -20px;
+}
+
+li {
+  list-style: none;
+  color: grey;
+}
+
+strong {
+  font-size: 25px;
+  color: black;
+}
+
+.reminder {
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+
+.col.others {
+  color: grey;
+  text-align: right;
+}
+
+.section-two,
+col-1 {
+  margin: 30px;
+}
+
+.quote {
+  text-align: center;
+  padding: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border: solid 1px lightgrey;
+  border-radius: 200px;
+  transition: 200ms;
+}
+
+h4 {
+  font-size: 15px;
+}
+p {
+  font-size: 10px;
+  position: relative;
+}
+
+.quote:hover {
+  color: white;
+  background-color: palevioletred;
+  cursor: pointer;
+}
