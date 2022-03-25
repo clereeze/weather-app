@@ -40,20 +40,17 @@ search("Singapore");
 
 
 function searchLocation(position) {
-let apiKey = "7b164cdced7aaeb17590e6fb8707df24";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+console.log(position);
 let currentCity = "Singapore";
 document.querySelector("#city-name").innerHTML = `You are currently in ${currentCity}, with coordinates ${position.coords.latitude}, ${position.coords.longitude}`;
-axios.get(`${apiUrl}`).then(displayWeatherCondition);
 };
 
 function updateCurrent(event) {
-event.preventDefault;
+event.preventDefault();
 navigator.geolocation.getCurrentPosition(searchLocation);
 };
 
-let currentTemp = document.querySelector("#current-button"); 
-currentTemp.addEventListener("click", updateCurrent);
+document.querySelector("#current-button").addEventListener("click", updateCurrent);
 
 
 
