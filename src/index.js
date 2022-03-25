@@ -38,11 +38,12 @@ function handleSubmit(event) {
 document.querySelector("#city-forms").addEventListener("submit", handleSubmit);
 search("Singapore"); 
 
+
 function searchLocation(position) {
 let apiKey = "7b164cdced7aaeb17590e6fb8707df24";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coord.lat}&lon=${position.coord.lon}&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 let currentCity = "Singapore";
-document.querySelector("#city-name").innerHTML = `You are currently in ${currentCity}, with coordinates ${position.coord.lon}, ${position.coord.lat}`;
+document.querySelector("#city-name").innerHTML = `You are currently in ${currentCity}, with coordinates ${position.coords.latitude}, ${position.coords.longitude}`;
 axios.get(`${apiUrl}`).then(displayWeatherCondition);
 };
 
