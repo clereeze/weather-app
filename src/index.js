@@ -18,11 +18,13 @@ document.querySelector("#day-time").innerHTML = `${day}, ${hour}:${minutes}`;
 //temperature and city
 
 function displayWeatherCondition (response) {
+console.log(response.data);
 document.querySelector("#city-name").innerHTML = response.data.name;
 document.querySelector("#weather").innerHTML = response.data.weather[0].description;
 document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
 document.querySelector("#humidity").innerHTML = response.data.main.humidity; 
 document.querySelector("#wind").innerHTML = response.data.wind.speed;
+document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function search(city) {
