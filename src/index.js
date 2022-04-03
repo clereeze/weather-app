@@ -11,7 +11,7 @@ if (hour < 10) {
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes =  `0${minutes}`;
-};
+}
 
 document.querySelector("#day-time").innerHTML = `${day}, ${hour}:${minutes}`;
 
@@ -21,7 +21,9 @@ function displayWeatherCondition (response) {
 document.querySelector("#city-name").innerHTML = response.data.name;
 document.querySelector("#weather").innerHTML = response.data.weather[0].description;
 document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
-};
+document.querySelector("#humidity").innerHTML = response.data.main.humidity; 
+document.querySelector("#wind").innerHTML = response.data.wind.speed;
+}
 
 function search(city) {
   let apiKey = "7b164cdced7aaeb17590e6fb8707df24";
@@ -33,7 +35,7 @@ function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-bar").value;
   search(city);
-};
+}
 
 document.querySelector("#city-forms").addEventListener("submit", handleSubmit);
 search("Singapore"); 

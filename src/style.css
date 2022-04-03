@@ -14,6 +14,7 @@ body {
 li {
   list-style: none;
   color: grey;
+  text-transform: capitalize;
 }
 
 strong {
@@ -70,7 +71,7 @@ p {
 
 .units {
   position: relative;
-  top: -20px;
+  top: -23px;
 }
 
 .reminder {
