@@ -11,6 +11,24 @@ body {
   left: 10px;
 }
 
+li {
+  list-style: none;
+  color: grey;
+}
+
+strong {
+  font-size: 25px;
+  color: black;
+}
+
+h4 {
+  font-size: 15px;
+}
+p {
+  font-size: 10px;
+  position: relative;
+}
+
 #linkGitHub {
   display: block;
   margin: 0 auto;
@@ -55,16 +73,6 @@ body {
   top: -20px;
 }
 
-li {
-  list-style: none;
-  color: grey;
-}
-
-strong {
-  font-size: 25px;
-  color: black;
-}
-
 .reminder {
   font-size: 10px;
   margin-bottom: 20px;
@@ -88,14 +96,6 @@ col-1 {
   border: solid 1px lightgrey;
   border-radius: 200px;
   transition: 200ms;
-}
-
-h4 {
-  font-size: 15px;
-}
-p {
-  font-size: 10px;
-  position: relative;
 }
 
 .quote:hover {
