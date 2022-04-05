@@ -107,3 +107,13 @@ col-1 {
   background-color: palevioletred;
   cursor: pointer;
 }
+
+.active {
+  color: #202124;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}

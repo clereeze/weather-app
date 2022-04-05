@@ -20,7 +20,7 @@ document.querySelector("#day-time").innerHTML = `${day}, ${hour}:${minutes}`;
 function displayWeatherCondition (response) {
 document.querySelector("#city-name").innerHTML = response.data.name;
 document.querySelector("#weather").innerHTML = response.data.weather[0].description;
-let celsiusTemperature = response.data.main.temp;
+celsiusTemperature = response.data.main.temp;
 document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
 document.querySelector("#humidity").innerHTML = response.data.main.humidity; 
 document.querySelector("#wind").innerHTML = response.data.wind.speed;
@@ -58,21 +58,26 @@ document.querySelector("#current-button").addEventListener("click", updateCurren
 function displayFahrenheit(event) {
 event.preventDefault();
 let temperatureElement = document.querySelector("#temperature");
+celsiusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
 let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
 temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-let celsiusTemperature = null; 
-
-document.querySelector("#fahrenheit-link").addEventListener("click", displayFahrenheit);
+celsiusTemperature = null; 
+let fahrenheitLink = document.querySelector("#fahrenheit-link")
+fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 function displayCelsius(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = celsiusTemperature;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-document.querySelector("#celsius-link").addEventListener("click", displayCelsius);
+let celsiusLink = document.querySelector("#celsius-link")
+celsiusLink.addEventListener("click", displayCelsius);
 
 search("Singapore"); 
 
