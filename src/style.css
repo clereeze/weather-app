@@ -87,9 +87,15 @@ p {
   text-align: right;
 }
 
-.section-two,
+.weather-forecast,
 col-1 {
   margin: 30px;
+  text-align: center;
+}
+
+.weather-forecast-temp {
+  font-size: 13px;
+  opacity: 0.5;
 }
 
 .quote {
