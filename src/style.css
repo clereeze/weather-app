@@ -87,21 +87,31 @@ p {
   text-align: right;
 }
 
-.weather-forecast,
-col-1 {
+.weather-forecast {
   margin: 30px;
   text-align: center;
+  color: grey;
+}
+
+.weather-forecast-date {
+  color: rgba(0, 0, 0, 0.568);
 }
 
 .weather-forecast-temp {
   font-size: 13px;
   opacity: 0.5;
+  color: black;
+}
+
+.weather-temp-max {
+  color: #202124;
 }
 
 .quote {
   text-align: center;
   padding: 15px;
   padding-bottom: 10px;
+  margin-top: 20px;
   margin-bottom: 15px;
   border: solid 1px lightgrey;
   border-radius: 200px;

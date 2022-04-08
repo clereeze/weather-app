@@ -17,6 +17,32 @@ document.querySelector("#day-time").innerHTML = `${day}, ${hour}:${minutes}`;
 
 //temperature and city
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thurs", "Fri", "Sat", "Sun"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function(day) {
+    forecastHTML = forecastHTML +   
+  `
+  <div class="col">
+    <div class="weather-forecast-date"> ${day} </div>
+    <img 
+      src="images/cloudy.jpeg" 
+      alt="" 
+      width="36"
+      />
+    <div class="weather-forecast-temp"> 
+      <span class="weather-temp-max">27℃ </span> 
+      <span class="weather-temp-min">18℃ </span>
+    </div>
+  </div>
+  `;
+  });
+  
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeatherCondition (response) {
 document.querySelector("#city-name").innerHTML = response.data.name;
 document.querySelector("#weather").innerHTML = response.data.weather[0].description;
@@ -80,6 +106,7 @@ let celsiusLink = document.querySelector("#celsius-link")
 celsiusLink.addEventListener("click", displayCelsius);
 
 search("Singapore"); 
+displayForecast();
 
 
 
