@@ -54,6 +54,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+
 function getForecast(coordinates) {
 let apiKey = "7b164cdced7aaeb17590e6fb8707df24";
 let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -70,7 +71,6 @@ document.querySelector("#wind").innerHTML = response.data.wind.speed;
 document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
 getForecast(response.data.coord);
-
 }
 
 function search(city) {
