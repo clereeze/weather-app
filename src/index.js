@@ -90,9 +90,14 @@ function handleSubmit(event) {
 
 document.querySelector("#city-forms").addEventListener("submit", handleSubmit);
 
+function displayLocation(position) {
+document.querySelector("#city-name").innerHTML = `You are currently in ${position.data[0].country}, with coordinates ${position.data[0].lat}, ${position.data[0].lon}`;
+}
+
 function searchLocation(position) {
-console.log(position);
-document.querySelector("#city-name").innerHTML = `You are currently in ${position.coords.latitude,position.coords.longitude}, with coordinates ${position.coords.latitude}, ${position.coords.longitude}`;
+let apiKey = "7b164cdced7aaeb17590e6fb8707df24";
+let apiURL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`
+axios.get(`${apiURL}`).then(displayLocation);
 };
 
 function updateCurrent(event) {
