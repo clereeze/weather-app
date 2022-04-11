@@ -71,6 +71,7 @@ document.querySelector("#wind").innerHTML = response.data.wind.speed;
 document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
 getForecast(response.data.coord);
+
 }
 
 function search(city) {
@@ -81,6 +82,8 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let city = document.querySelector("#search-bar").value;
   search(city);
 }
@@ -89,8 +92,7 @@ document.querySelector("#city-forms").addEventListener("submit", handleSubmit);
 
 function searchLocation(position) {
 console.log(position);
-let currentCity = "Singapore";
-document.querySelector("#city-name").innerHTML = `You are currently in ${currentCity}, with coordinates ${position.coords.latitude}, ${position.coords.longitude}`;
+document.querySelector("#city-name").innerHTML = `You are currently in ${position.coords.latitude,position.coords.longitude}, with coordinates ${position.coords.latitude}, ${position.coords.longitude}`;
 };
 
 function updateCurrent(event) {
@@ -126,6 +128,7 @@ let celsiusLink = document.querySelector("#celsius-link")
 celsiusLink.addEventListener("click", displayCelsius);
 
 search("Singapore"); 
+
 
 
 
