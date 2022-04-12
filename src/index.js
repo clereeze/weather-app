@@ -15,15 +15,12 @@ if (minutes < 10) {
 
 document.querySelector("#day-time").innerHTML = `${day}, ${hour}:${minutes}`;
 
-//temperature and city
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[day];
-
 }
 
 function displayForecast(response) {
