@@ -93,7 +93,7 @@ document.querySelector("#city-name").innerHTML = `You are currently in ${positio
 
 function searchLocation(position) {
 let apiKey = "7b164cdced7aaeb17590e6fb8707df24";
-let apiURL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`
+let apiURL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`
 axios.get(`${apiURL}`).then(displayLocation);
 };
 
