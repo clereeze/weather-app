@@ -1,4 +1,5 @@
 //day and time 
+function formatDate() {
 let now = new Date();
 
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -12,8 +13,11 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes =  `0${minutes}`;
 }
-
 document.querySelector("#day-time").innerHTML = `${day}, ${hour}:${minutes}`;
+}
+
+formatDate(); 
+
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -88,7 +92,8 @@ function handleSubmit(event) {
 document.querySelector("#city-forms").addEventListener("submit", handleSubmit);
 
 function displayLocation(position) {
-document.querySelector("#city-name").innerHTML = `You are currently in ${position.data[0].country}, with coordinates ${position.data[0].lat}, ${position.data[0].lon}`;
+document.querySelector("#city-name").innerHTML = `You are currently in ${position.data[0].name}, with coordinates ${position.data[0].lat}, ${position.data[0].lon}`;
+search(position.data[0].name);
 }
 
 function searchLocation(position) {
